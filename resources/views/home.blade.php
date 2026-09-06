@@ -1,101 +1,48 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+@extends('layouts.app')
 
-    <title>Halaman Utama</title>
+@section('title', 'Halaman Utama')
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
+@section('content')
 
-<body>
+    {{-- Hero Section --}}
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-primary navbar-dark">
-        <div class="container">
-
-            <a class="navbar-brand fw-bold" href="#">
-                Pocinui
-            </a>
-
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarMenu"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div
-                class="collapse navbar-collapse"
-                id="navbarMenu"
-            >
-
-                <ul class="navbar-nav ms-auto">
-
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">
-                            Home
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            Tentang
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            Program
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            Kontak
-                        </a>
-                    </li>
-
-                </ul>
-
-            </div>
-        </div>
-    </nav>
-
-
-    <!-- Hero -->
     <section class="py-5 bg-light">
 
         <div class="container">
 
-            <div class="row align-items-center min-vh-75">
+            <div class="row align-items-center">
 
                 <div class="col-lg-6">
 
                     <h1 class="display-4 fw-bold">
-                        Selamat Datang di
+
+                        Belajar Lebih Mudah Bersama
+
                         <span class="text-primary">
                             Pocinui
                         </span>
+
                     </h1>
 
+
                     <p class="lead mt-3">
-                        Tempat belajar yang membantu siswa
-                        memahami pelajaran dengan lebih mudah,
+
+                        Bimbingan belajar untuk membantu siswa
+                        memahami materi dengan lebih mudah,
                         nyaman, dan menyenangkan.
+
                     </p>
+
 
                     <div class="mt-4">
 
                         <a
-                            href="#program"
+                            href="{{ ('program') }}"
                             class="btn btn-primary btn-lg me-2"
                         >
                             Lihat Program
                         </a>
+
 
                         <a
                             href="#tentang"
@@ -113,9 +60,8 @@
 
                     <img
                         src="{{ asset('images/belajar.jpg') }}"
-                        class="img-fluid rounded shadow"
                         alt="Belajar bersama Pocinui"
-                        style="max-width: 500px;"
+                        class="img-fluid rounded shadow"
                     >
 
                 </div>
@@ -127,38 +73,46 @@
     </section>
 
 
-    <!-- Tentang -->
+
+    {{-- Tentang --}}
     <section
-        class="py-5"
         id="tentang"
+        class="py-5"
     >
 
-        <div class="container text-center">
+        <div class="container">
 
-            <h2 class="fw-bold">
-                Mengapa Memilih Pocinui?
-            </h2>
+            <div class="text-center mb-5">
 
-            <p class="text-muted">
-                Belajar lebih mudah bersama guru yang berpengalaman.
-            </p>
+                <h2 class="fw-bold">
+                    Mengapa Memilih Pocinui?
+                </h2>
+
+                <p class="text-muted">
+                    Kami membantu siswa belajar dengan metode
+                    yang lebih mudah dipahami.
+                </p>
+
+            </div>
 
 
-            <div class="row mt-5">
+            <div class="row g-4">
 
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4">
 
                     <div class="card h-100 shadow-sm border-0">
 
-                        <div class="card-body">
+                        <div class="card-body text-center">
 
                             <h4 class="card-title">
                                 Guru Berpengalaman
                             </h4>
 
                             <p class="card-text">
-                                Belajar bersama pengajar yang memahami
-                                kebutuhan setiap siswa.
+
+                                Belajar bersama guru yang memahami
+                                kebutuhan dan kemampuan setiap siswa.
+
                             </p>
 
                         </div>
@@ -168,19 +122,21 @@
                 </div>
 
 
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4">
 
                     <div class="card h-100 shadow-sm border-0">
 
-                        <div class="card-body">
+                        <div class="card-body text-center">
 
                             <h4 class="card-title">
                                 Materi Lengkap
                             </h4>
 
                             <p class="card-text">
-                                Materi pembelajaran disusun secara
+
+                                Materi belajar disusun secara
                                 terstruktur dan mudah dipahami.
+
                             </p>
 
                         </div>
@@ -190,19 +146,21 @@
                 </div>
 
 
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4">
 
                     <div class="card h-100 shadow-sm border-0">
 
-                        <div class="card-body">
+                        <div class="card-body text-center">
 
                             <h4 class="card-title">
                                 Belajar Nyaman
                             </h4>
 
                             <p class="card-text">
-                                Lingkungan belajar yang santai tetapi
-                                tetap fokus pada perkembangan siswa.
+
+                                Lingkungan belajar yang nyaman,
+                                santai, tetapi tetap fokus.
+
                             </p>
 
                         </div>
@@ -218,19 +176,150 @@
     </section>
 
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-4">
+
+    {{-- Program --}}
+    <section
+        id="program"
+        class="py-5 bg-light"
+    >
 
         <div class="container">
 
-            <p class="mb-0">
-                &copy; {{ date('Y') }} Pocinui.
-                Semua Hak Dilindungi.
-            </p>
+            <div class="text-center mb-5">
+
+                <h2 class="fw-bold">
+                    Program Belajar
+                </h2>
+
+                <p class="text-muted">
+                    Pilih program belajar sesuai kebutuhanmu.
+                </p>
+
+            </div>
+
+
+            <div class="row g-4">
+
+                <div class="col-md-4">
+
+                    <div class="card shadow-sm h-100">
+
+                        <div class="card-body">
+
+                            <h4>
+                                SD
+                            </h4>
+
+                            <p>
+                                Program bimbingan belajar
+                                untuk siswa sekolah dasar.
+                            </p>
+
+                            <a
+                                href="#"
+                                class="btn btn-primary"
+                            >
+                                Selengkapnya
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <div class="card shadow-sm h-100">
+
+                        <div class="card-body">
+
+                            <h4>
+                                SMP
+                            </h4>
+
+                            <p>
+                                Program belajar untuk membantu
+                                siswa menghadapi materi SMP.
+                            </p>
+
+                            <a
+                                href="#"
+                                class="btn btn-primary"
+                            >
+                                Selengkapnya
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <div class="card shadow-sm h-100">
+
+                        <div class="card-body">
+
+                            <h4>
+                                SMA
+                            </h4>
+
+                            <p>
+                                Persiapan pembelajaran SMA
+                                hingga persiapan masuk perguruan tinggi.
+                            </p>
+
+                            <a
+                                href="#"
+                                class="btn btn-primary"
+                            >
+                                Selengkapnya
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
-    </footer>
+    </section>
 
-</body>
-</html>
+
+
+    {{-- Kontak --}}
+    <section
+        id="kontak"
+        class="py-5"
+    >
+
+        <div class="container text-center">
+
+            <h2 class="fw-bold">
+                Hubungi Kami
+            </h2>
+
+
+            <p class="text-muted">
+                Ingin mengetahui lebih lanjut mengenai
+                program Pocinui?
+            </p>
+
+            <a
+                href="#"
+                class="btn btn-success btn-lg"
+            >
+                Hubungi Sekarang
+            </a>
+
+        </div>
+
+    </section>
+@endsection
