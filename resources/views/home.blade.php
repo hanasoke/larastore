@@ -112,9 +112,10 @@
                 <div class="col-lg-6 text-center mt-5 mt-lg-0">
 
                     <img
-                        src="https://placehold.co/600x400"
+                        src="{{ asset('images/belajar.jpg') }}"
                         class="img-fluid rounded shadow"
                         alt="Belajar bersama Pocinui"
+                        style="max-width: 500px;"
                     >
 
                 </div>
