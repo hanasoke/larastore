@@ -38,7 +38,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('Program') ? 'active' : '' }}" 
+                    <a class="nav-link {{ request()->routeIs('program') ? 'active' : '' }}" 
                     href="{{ route('program') }}"
                     >
                         Program

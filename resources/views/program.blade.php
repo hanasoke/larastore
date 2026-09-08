@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
-@section('title', 'Program Belajar')
+@section('title', 'Program Belajar - Pocinui')
 
 @section('content')
 
 {{-- ================= HERO ================= --}}
-<section class="bg-primary text-white py-5">
+<section class="bg-light py-5">
     <div class="container py-4">
         <div class="row align-items-center">
             <div class="col-lg-7">
@@ -18,7 +18,7 @@
                     pengajar Pocinui.
                 </p>
                 <a href="#daftar-program"
-                   class="btn btn-light btn-lg mt-3">
+                   class="btn btn-primary btn-lg mt-3">
                     Lihat Program
                 </a>
             </div>
@@ -312,7 +312,7 @@
 </section>
 
 {{-- ================= CTA ================= --}}
-<section class="bg-primary text-white py-5">
+<section class="py-5">
     <div class="container text-center">
         <h2 class="fw-bold">
             Siap Meningkatkan Prestasi Belajarmu?
@@ -322,7 +322,7 @@
             program belajar yang sesuai kebutuhanmu.
         </p>
         <a href="#"
-           class="btn btn-light btn-lg mt-2">
+           class="btn btn-success btn-lg mt-2">
             Daftar Sekarang
         </a>
     </div>
