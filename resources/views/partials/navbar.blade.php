@@ -1,5 +1,5 @@
  <!-- Navbar -->
-<nav class="navbar navbar-expand-lg bg-primary navbar-dark">
+<nav class="navbar navbar-expand-lg bg-warning navbar-white">
     <div class="container">
 
         <a class="navbar-brand fw-bold" href="#">
