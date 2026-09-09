@@ -24,7 +24,7 @@
             </div>
             <div class="col-lg-5 text-center mt-4 mt-lg-0">
                 <img
-                    src="{{ asset('images/belajar.jpg') }}"
+                    src="{{ asset('images/bimbel/3.png') }}"
                     alt="Program Belajar Pocinui"
                     class="img-fluid rounded shadow"
                 >
