@@ -9,3 +9,7 @@ Route::get('/', function () {
 Route::get('/program', function() {
     return view('program');
 })->name('program');
+
+Route::get('/guru', function () {
+    return view('guru');
+});
