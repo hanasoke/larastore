@@ -460,7 +460,7 @@
 
 
 {{-- ================= CTA ================= --}}
-<section class="bg-light py-5">
+<section class="bg-primary text-white py-5">
 
     <div class="container text-center">
 
@@ -468,13 +468,13 @@
             Belajar Bersama Guru Pocinui
         </h2>
 
-        <p class="text-muted">
+        <p>
             Pilih program yang sesuai dengan kebutuhan belajarmu.
         </p>
 
         <a
             href="{{ route('program') }}"
-            class="btn btn-primary btn-lg"
+            class="btn btn-light btn-lg"
         >
             Lihat Program Belajar
         </a>
