@@ -449,7 +449,7 @@
                         <hr>
 
                         <h6 class="fw-bold mb-0">
-                            Siswa SMP
+                            <i>Bagas Suryadarma</i> - Siswa SMP
                         </h6>
 
                     </div>
@@ -477,7 +477,7 @@
                         <hr>
 
                         <h6 class="fw-bold mb-0">
-                            Siswa SMA
+                            <i>Mitsuba AOI</i> - Siswa SMA
                         </h6>
 
                     </div>
@@ -505,7 +505,7 @@
                         <hr>
 
                         <h6 class="fw-bold mb-0">
-                            Siswa SMA
+                            <i>Ajeng Utami</i> - Siswa SMA
                         </h6>
 
                     </div>
