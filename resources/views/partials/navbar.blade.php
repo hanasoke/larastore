@@ -38,6 +38,15 @@
                 </li>
 
                 <li class="nav-item">
+                    <a 
+                        class="nav-link {{ request()->routeIs('guru') ? 'active' : '' }}" 
+                        href="{{ route('guru') }}"
+                    >
+                        Guru 
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <a class="nav-link {{ request()->routeIs('program') ? 'active' : '' }}" 
                     href="{{ route('program') }}"
                     >

@@ -12,4 +12,4 @@ Route::get('/program', function() {
 
 Route::get('/guru', function () {
     return view('guru');
-});
+})->name('guru');

@@ -376,7 +376,7 @@
                 <div class="card h-100 shadow-sm border-0">
 
                     <img
-                        src="{{ asset('images/foto_guru/foto_profil_guru_pendidikan_pancasila.png') }}"
+                        src="{{ asset('images/foto_guru/foto_profil_guru_pkn.png') }}"
                         class="card-img-top"
                         alt="Guru Pendidikan Pancasila"
                         style="height: 300px; object-fit: cover;"
@@ -385,7 +385,7 @@
                     <div class="card-body text-center">
 
                         <img
-                            src="{{ asset('images/icons/subjects/icon_pelajaran_pendidikan_pancasila.png') }}"
+                            src="{{ asset('images/icons/subjects/icon_pelajaran_pkn.png') }}"
                             alt="Icon Pendidikan Pancasila"
                             width="70"
                             class="mb-3"
