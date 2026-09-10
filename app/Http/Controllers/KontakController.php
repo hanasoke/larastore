@@ -25,8 +25,6 @@ class KontakController extends Controller
 
         Kontak::create($validated);
 
-        return redirect($validated);
-
         return redirect()
             ->route('kontak')
             ->with(

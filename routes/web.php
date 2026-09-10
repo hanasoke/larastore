@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KontakController;
 
 Route::get('/', function () {
     return view('home');
@@ -17,3 +18,9 @@ Route::get('/program', function() {
 Route::get('/guru', function () {
     return view('guru');
 })->name('guru');
+
+Route::get('/kontak', [KontakController::class, 'index'])
+    ->name('kontak');
+
+Route::post('/kontak', [KontakController::class, 'store'])
+    ->name('kontak.store');

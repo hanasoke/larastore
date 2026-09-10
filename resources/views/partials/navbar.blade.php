@@ -21,7 +21,6 @@
         >
 
             <ul class="navbar-nav ms-auto">
-
                 <li class="nav-item">
                     <a 
                         class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}" 
@@ -58,11 +57,13 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a 
+                        class="nav-link {{ request()->routeIs('kontak') ? 'active' : '' }}" 
+                        href="{{ route('kontak') }}"
+                    >
                         Kontak
                     </a>
                 </li>
-
             </ul>
 
         </div>
