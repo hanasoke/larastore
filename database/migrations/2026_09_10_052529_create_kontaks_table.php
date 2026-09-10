@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('kontaks', function (Blueprint $table) {
             $table->id();
+
+            $table->string('nama');
+            $table->string('email');
+            $table->string('no_hp')->nullable();
+            $table->string('subjek');
+            $table->text('pesan');
+
             $table->timestamps();
         });
     }
