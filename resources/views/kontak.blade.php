@@ -66,9 +66,7 @@
                         </h5>
 
                         <p class="text-muted mb-0">
-
-                            Indonesia
-
+                            Jalan Sirojul Munir, Ruko Hanagakure, RT 02/ RW 03, Jatiasih / Jatisari, Kota Bekasi, Jawa Barat.
                         </p>
 
                     </div>
@@ -86,9 +84,7 @@
                         </h5>
 
                         <p class="text-muted mb-0">
-
-                            info@pocinui.com
-
+                            infopocinui@pocinui.com
                         </p>
 
                     </div>
@@ -106,9 +102,7 @@
                         </h5>
 
                         <p class="text-muted mb-0">
-
-                            08xxxxxxxxxx
-
+                            085199679134
                         </p>
 
                     </div>
@@ -133,7 +127,7 @@
 
                         <p class="text-muted mb-0">
 
-                            08.00 - 17.00 WIB
+                            10.00 - 21.00 WIB
 
                         </p>
 
