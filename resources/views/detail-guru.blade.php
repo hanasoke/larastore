@@ -404,7 +404,7 @@
 
         <h2 class="fw-bold">
             Tertarik Belajar Bersama
-            {{ $guru['nama'] }}?
+            {{ $guru['nama'] }} ?
         </h2>
 
         <p class="lead mt-3">

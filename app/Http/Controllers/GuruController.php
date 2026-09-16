@@ -266,9 +266,9 @@ class GuruController extends Controller
                 'status' => 'Guru Pendidikan Pancasila',
                 'email' => 'listyo@pocinui.com',
 
-                'foto' => 'images/foto_guru/foto_profil_guru_pendidikan.png',
+                'foto' => 'images/foto_guru/foto_profil_guru_pkn.png',
 
-                'icon' => 'images/icons/subjects/icon_pelajaran_pendidikan.png',
+                'icon' => 'images/icons/subjects/icon_pelajaran_pkn.png',
 
                 'deskripsi' =>
                     'Pengajar Pendidikan Pancasila yang membahas
