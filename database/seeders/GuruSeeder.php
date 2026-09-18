@@ -185,9 +185,9 @@ class GuruSeeder extends Seeder
                     'Universitas Negeri Surabaya',
                 'pengalaman' => 8,
                 'foto' =>
-                    'images/foto_guru/foto_profil_guru_pendidikan.png',
+                    'images/foto_guru/foto_profil_guru_pkn.png',
                 'icon' =>
-                    'images/icons/subjects/icon_pelajaran_pendidikan.png',
+                    'images/icons/subjects/icon_pelajaran_pkn.png',
                 'deskripsi' =>
                     'Pengajar Pendidikan Pancasila yang membahas Pancasila, konstitusi, hak warga negara, dan demokrasi.',
             ],
