@@ -13,6 +13,34 @@ return new class extends Migration
     {
         Schema::create('gurus', function (Blueprint $table) {
             $table->id();
+
+            $table->string('slug')->unique();
+
+            $table->string('nama');
+
+            $table->string('gelar')->nullable();
+
+            $table->enum(
+                'jenis_kelamin',
+                ['Laki-laki', 'Perempuan']
+            );
+
+            $table->unsignedInteger('usia')->nullable();
+
+            $table->string('mata_pelajaran');
+
+            $table->string('pendidikan')->nullable();
+
+            $table->string('universitas')->nullable();
+
+            $table->unsignedInteger('pengalaman')->default(0);
+
+            $table->string('foto')->nullable();
+
+            $table->string('icon')->nullable();
+
+            $table->text('deskripsi')->nullable();
+
             $table->timestamps();
         });
     }
