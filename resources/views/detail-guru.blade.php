@@ -1,69 +1,118 @@
 @extends('layouts.app')
 
-@section('title', $guru['nama'] . ' - Pocinui')
+@section('title', 'Detail Guru - ' . $guru->nama)
 
 @section('content')
 
-{{-- ================= HEADER ================= --}}
+{{-- =========================
+     HERO / PROFIL UTAMA
+========================= --}}
 <section class="bg-primary text-white py-5">
 
     <div class="container py-4">
 
         <div class="row align-items-center g-5">
 
-            {{-- Foto --}}
+            {{-- FOTO GURU --}}
             <div class="col-lg-4 text-center">
 
-                <img
-                    src="{{ asset($guru['foto']) }}"
-                    alt="{{ $guru['nama'] }}"
-                    class="img-fluid rounded-4 shadow"
-                    style="
-                        width: 350px;
-                        height: 350px;
-                        object-fit: cover;
-                    "
-                >
+                @if($guru->foto)
+
+                    <img
+                        src="{{ asset($guru->foto) }}"
+                        alt="{{ $guru->nama }}"
+                        class="img-fluid rounded-4 shadow"
+                        style="
+                            width: 320px;
+                            height: 320px;
+                            object-fit: cover;
+                        "
+                    >
+
+                @else
+
+                    <div
+                        class="bg-light rounded-4 shadow
+                               d-flex align-items-center
+                               justify-content-center mx-auto"
+                        style="
+                            width: 320px;
+                            height: 320px;
+                        "
+                    >
+
+                        <span
+                            class="text-secondary"
+                            style="font-size: 100px;"
+                        >
+                            👨‍🏫
+                        </span>
+
+                    </div>
+
+                @endif
 
             </div>
 
 
-            {{-- Profil --}}
+            {{-- INFORMASI UTAMA --}}
             <div class="col-lg-8">
 
-                <div class="d-flex align-items-center mb-3">
+                <span
+                    class="badge bg-warning text-dark
+                           px-3 py-2 mb-3"
+                >
+                    {{ $guru->mata_pelajaran }}
+                </span>
 
-                    <img
-                        src="{{ asset($guru['icon']) }}"
-                        alt="{{ $guru['mata_pelajaran'] }}"
-                        width="60"
-                        height="60"
-                        class="me-3"
+
+                <h1 class="display-5 fw-bold">
+
+                    {{ $guru->nama }}
+
+                    @if($guru->gelar)
+                        , {{ $guru->gelar }}
+                    @endif
+
+                </h1>
+
+
+                <p class="fs-4 mt-3 mb-3">
+
+                    Guru {{ $guru->mata_pelajaran }}
+
+                </p>
+
+
+                @if($guru->deskripsi)
+
+                    <p class="lead">
+
+                        {{ $guru->deskripsi }}
+
+                    </p>
+
+                @endif
+
+
+                <div class="mt-4">
+
+                    <a
+                        href="{{ route('program') }}"
+                        class="btn btn-warning btn-lg me-2"
                     >
+                        Lihat Program
+                    </a>
 
-                    <div>
 
-                        <span class="badge bg-light text-primary mb-2">
-                            {{ $guru['mata_pelajaran'] }}
-                        </span>
-
-                        <h1 class="fw-bold mb-0">
-                            {{ $guru['nama'] }}, {{ $guru['gelar'] }}
-                        </h1>
-
-                    </div>
+                    <a
+                        href="{{ route('guru') }}"
+                        class="btn btn-outline-light btn-lg"
+                    >
+                        Kembali
+                    </a>
 
                 </div>
-
-
-                <h4 class="fw-normal mt-3">
-                    {{ $guru['status'] }}
-                </h4>
-
-
-                <p class="lead mt-3 mb-0">
-                    {{ $guru['deskripsi'] }}
-                </p>
 
             </div>
 
@@ -74,19 +123,18 @@
 </section>
 
 
-
-{{-- ================= BIODATA ================= --}}
+{{-- =========================
+     BIODATA
+========================= --}}
 <section class="py-5">
 
     <div class="container">
 
         <div class="row g-4">
 
+            <div class="col-lg-8">
 
-            {{-- Biodata Guru --}}
-            <div class="col-lg-7">
-
-                <div class="card border-0 shadow-sm h-100">
+                <div class="card border-0 shadow-sm">
 
                     <div class="card-body p-4 p-lg-5">
 
@@ -97,112 +145,135 @@
 
                         <div class="table-responsive">
 
-                            <table class="table table-borderless align-middle">
+                            <table
+                                class="table table-borderless
+                                       align-middle"
+                            >
 
                                 <tbody>
 
                                     <tr>
+
                                         <th style="width: 35%;">
                                             Nama Lengkap
                                         </th>
 
                                         <td>
-                                            {{ $guru['nama'] }}
+                                            {{ $guru->nama }}
                                         </td>
+
                                     </tr>
 
 
                                     <tr>
+
                                         <th>
                                             Gelar
                                         </th>
 
                                         <td>
-                                            {{ $guru['gelar'] }}
+                                            {{ $guru->gelar ?? '-' }}
                                         </td>
+
                                     </tr>
 
 
                                     <tr>
+
                                         <th>
                                             Jenis Kelamin
                                         </th>
 
                                         <td>
-                                            {{ $guru['jenis_kelamin'] }}
+                                            {{ $guru->jenis_kelamin }}
                                         </td>
+
                                     </tr>
 
 
                                     <tr>
+
                                         <th>
                                             Usia
                                         </th>
 
                                         <td>
-                                            {{ $guru['usia'] }} Tahun
+
+                                            @if($guru->usia)
+
+                                                {{ $guru->usia }} Tahun
+
+                                            @else
+
+                                                -
+
+                                            @endif
+
                                         </td>
+
                                     </tr>
 
 
                                     <tr>
-                                        <th>
-                                            Pendidikan
-                                        </th>
 
-                                        <td>
-                                            {{ $guru['pendidikan'] }}
-                                        </td>
-                                    </tr>
-
-
-                                    <tr>
-                                        <th>
-                                            Perguruan Tinggi
-                                        </th>
-
-                                        <td>
-                                            {{ $guru['universitas'] }}
-                                        </td>
-                                    </tr>
-
-
-                                    <tr>
                                         <th>
                                             Mata Pelajaran
                                         </th>
 
                                         <td>
 
-                                            <span class="badge bg-primary">
+                                            <span
+                                                class="badge bg-primary"
+                                            >
 
-                                                {{ $guru['mata_pelajaran'] }}
+                                                {{ $guru->mata_pelajaran }}
 
                                             </span>
 
                                         </td>
+
                                     </tr>
 
 
                                     <tr>
+
+                                        <th>
+                                            Pendidikan
+                                        </th>
+
+                                        <td>
+                                            {{ $guru->pendidikan ?? '-' }}
+                                        </td>
+
+                                    </tr>
+
+
+                                    <tr>
+
+                                        <th>
+                                            Universitas
+                                        </th>
+
+                                        <td>
+                                            {{ $guru->universitas ?? '-' }}
+                                        </td>
+
+                                    </tr>
+
+
+                                    <tr>
+
                                         <th>
                                             Pengalaman Mengajar
                                         </th>
 
                                         <td>
-                                            {{ $guru['pengalaman'] }}
+
+                                            {{ $guru->pengalaman ?? 0 }}
+                                            Tahun
+
                                         </td>
-                                    </tr>
 
-
-                                    <tr>
-                                        <th>
-                                            Status
-                                        </th>
-
-                                        <td>
-                                            {{ $guru['status'] }}
-                                        </td>
                                     </tr>
 
                                 </tbody>
@@ -218,168 +289,81 @@
             </div>
 
 
+            {{-- =========================
+                 SIDEBAR
+            ========================= --}}
+            <div class="col-lg-4">
 
-            {{-- Keahlian --}}
-            <div class="col-lg-5">
+                {{-- MAPEL --}}
+                <div
+                    class="card border-0 shadow-sm
+                           text-center mb-4"
+                >
 
-                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body p-4">
 
-                    <div class="card-body p-4 p-lg-5">
+                        @if($guru->icon)
 
-                        <h2 class="fw-bold mb-4">
-                            Keahlian
-                        </h2>
-
-
-                        @foreach($guru['keahlian'] as $keahlian)
-
-                            <div
-                                class="d-flex align-items-center
-                                       border rounded-3 p-3 mb-3"
+                            <img
+                                src="{{ asset($guru->icon) }}"
+                                alt="{{ $guru->mata_pelajaran }}"
+                                class="mb-3"
+                                style="
+                                    width: 90px;
+                                    height: 90px;
+                                    object-fit: contain;
+                                "
                             >
 
-                                <div class="me-3 fs-4">
-                                    ✓
-                                </div>
+                        @else
 
-                                <div>
-                                    {{ $keahlian }}
-                                </div>
-
+                            <div
+                                class="display-4 mb-3"
+                            >
+                                📚
                             </div>
 
-                        @endforeach
+                        @endif
+
+
+                        <h5 class="fw-bold">
+                            Mata Pelajaran
+                        </h5>
+
+                        <h4 class="text-primary fw-bold">
+
+                            {{ $guru->mata_pelajaran }}
+
+                        </h4>
 
                     </div>
 
                 </div>
 
-            </div>
 
-        </div>
+                {{-- PENGALAMAN --}}
+                <div
+                    class="card border-0 shadow-sm
+                           text-center"
+                >
 
-    </div>
+                    <div class="card-body p-4">
 
-</section>
-
-
-
-{{-- ================= PENDIDIKAN ================= --}}
-<section class="bg-light py-5">
-
-    <div class="container">
-
-        <div class="text-center mb-5">
-
-            <h2 class="fw-bold">
-                Latar Belakang Pendidikan
-            </h2>
-
-            <p class="text-muted">
-                Informasi pendidikan dan bidang pengajaran.
-            </p>
-
-        </div>
-
-
-        <div class="row justify-content-center">
-
-            <div class="col-lg-8">
-
-                <div class="card border-0 shadow-sm">
-
-                    <div class="card-body p-5">
-
-                        <div class="row align-items-center">
-
-                            <div class="col-md-2 text-center">
-
-                                <div class="display-3">
-                                    🎓
-                                </div>
-
-                            </div>
-
-
-                            <div class="col-md-10">
-
-                                <h4 class="fw-bold">
-                                    {{ $guru['pendidikan'] }}
-                                </h4>
-
-                                <p class="text-primary fw-semibold mb-2">
-                                    {{ $guru['universitas'] }}
-                                </p>
-
-                                <p class="text-muted mb-0">
-
-                                    Latar belakang pendidikan tersebut
-                                    mendukung proses pengajaran
-
-                                    {{ $guru['mata_pelajaran'] }}
-
-                                    di Pocinui.
-
-                                </p>
-
-                            </div>
-
+                        <div
+                            class="display-4 text-primary
+                                   fw-bold"
+                        >
+                            {{ $guru->pengalaman ?? 0 }}
                         </div>
 
-                    </div>
+                        <h5 class="fw-bold">
+                            Tahun Pengalaman
+                        </h5>
 
-                </div>
+                        <p class="text-muted mb-0">
 
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-{{-- ================= PENGALAMAN ================= --}}
-<section class="py-5">
-
-    <div class="container">
-
-        <div class="text-center mb-5">
-
-            <h2 class="fw-bold">
-                Pengalaman Mengajar
-            </h2>
-
-        </div>
-
-
-        <div class="row justify-content-center">
-
-            <div class="col-lg-8">
-
-                <div class="card border-0 shadow-sm">
-
-                    <div class="card-body text-center p-5">
-
-                        <div class="display-3">
-                            👨‍🏫
-                        </div>
-
-                        <h2 class="fw-bold text-primary mt-3">
-
-                            {{ $guru['pengalaman'] }}
-
-                        </h2>
-
-                        <p class="text-muted">
-
-                            pengalaman dalam mengajar
-
-                            {{ $guru['mata_pelajaran'] }}
-
-                            dan mendampingi siswa memahami
-                            berbagai materi pembelajaran.
+                            Pengalaman mengajar dan
+                            mendampingi siswa.
 
                         </p>
 
@@ -396,21 +380,182 @@
 </section>
 
 
+{{-- =========================
+     PENDIDIKAN
+========================= --}}
+<section class="bg-light py-5">
 
-{{-- ================= CTA ================= --}}
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2 class="fw-bold">
+                Latar Belakang Pendidikan
+            </h2>
+
+            <p class="text-muted">
+
+                Pendidikan yang mendukung kompetensi
+                pengajaran di Pocinui.
+
+            </p>
+
+        </div>
+
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-8">
+
+                <div class="card border-0 shadow-sm">
+
+                    <div class="card-body p-4 p-md-5">
+
+                        <div class="row align-items-center">
+
+                            <div
+                                class="col-md-3
+                                       text-center mb-4 mb-md-0"
+                            >
+
+                                <div
+                                    style="font-size: 80px;"
+                                >
+                                    🎓
+                                </div>
+
+                            </div>
+
+
+                            <div class="col-md-9">
+
+                                <h4 class="fw-bold">
+
+                                    {{ $guru->pendidikan ?? 'Pendidikan belum tersedia' }}
+
+                                </h4>
+
+
+                                <h5 class="text-primary">
+
+                                    {{ $guru->universitas ?? '-' }}
+
+                                </h5>
+
+
+                                <p class="text-muted mt-3 mb-0">
+
+                                    Latar belakang pendidikan
+                                    mendukung kompetensi dalam
+                                    mengajar mata pelajaran
+
+                                    <strong>
+                                        {{ $guru->mata_pelajaran }}
+                                    </strong>.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+{{-- =========================
+     TENTANG GURU
+========================= --}}
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-9">
+
+                <div class="text-center mb-4">
+
+                    <h2 class="fw-bold">
+                        Tentang Pengajar
+                    </h2>
+
+                </div>
+
+
+                <div class="card border-0 shadow-sm">
+
+                    <div class="card-body p-4 p-md-5">
+
+                        @if($guru->deskripsi)
+
+                            <p
+                                class="fs-5 text-muted
+                                       lh-lg mb-0"
+                            >
+
+                                {{ $guru->deskripsi }}
+
+                            </p>
+
+                        @else
+
+                            <p
+                                class="text-muted
+                                       text-center mb-0"
+                            >
+
+                                Informasi mengenai guru
+                                belum tersedia.
+
+                            </p>
+
+                        @endif
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+{{-- =========================
+     CALL TO ACTION
+========================= --}}
 <section class="bg-primary text-white py-5">
 
     <div class="container text-center">
 
         <h2 class="fw-bold">
-            Tertarik Belajar Bersama
-            {{ $guru['nama'] }} ?
+
+            Ingin Belajar Bersama
+            {{ $guru->nama }}?
+
         </h2>
+
 
         <p class="lead mt-3">
 
-            Lihat program belajar Pocinui
-            untuk mendapatkan informasi selengkapnya.
+            Temukan program belajar
+
+            {{ $guru->mata_pelajaran }}
+
+            yang sesuai dengan kebutuhanmu.
 
         </p>
 
@@ -419,17 +564,17 @@
 
             <a
                 href="{{ route('program') }}"
-                class="btn btn-light btn-lg me-2"
+                class="btn btn-warning btn-lg me-2"
             >
                 Lihat Program
             </a>
 
 
             <a
-                href="{{ route('guru') }}"
+                href="{{ route('kontak') }}"
                 class="btn btn-outline-light btn-lg"
             >
-                Kembali ke Guru
+                Hubungi Kami
             </a>
 
         </div>
