@@ -49,9 +49,9 @@
                 <div class="card h-100 shadow-sm border-0">
 
                     <img
-                        src="{{ asset($item['foto']) }}"
+                        src="{{ asset($item->foto) }}"
                         class="card-img-top"
-                        alt="{{ $item['nama'] }}"
+                        alt="{{ $item->nama }}"
                         style="
                             height: 300px; 
                             object-fit: cover;
@@ -63,15 +63,15 @@
                         <div class="d-flex align-items-center mb-3">
 
                             <img
-                                src="{{ asset($item['icon']) }}"
-                                alt="{{ $item['mata_pelajaran'] }}"
+                                src="{{ asset($item->icon) }}"
+                                alt="{{ $item->mata_pelajaran }}"
                                 width="35"
                                 height="35"
                                 class="me-2"
                             >
 
                             <span class="badge bg-primary">
-                                {{ $item['mata_pelajaran'] }}
+                                {{ $item->mata_pelajaran }}
                             </span>
 
                         </div>
@@ -79,12 +79,12 @@
                         
 
                         <h4 class="fw-bold">
-                            {{ $item['nama'] }}
-                            {{ $item['gelar'] }}
+                            {{ $item->nama }}
+                            {{ $item->gelar }}
                         </h4>
 
                         <p class="text-muted">
-                            {{ $item['deskripsi'] }}
+                            {{ $item->deskripsi }}
                         </p>
 
                     </div>
