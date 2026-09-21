@@ -11,25 +11,9 @@ class GuruController extends Controller
 {
     public function index()
     {
-        $gurus = Guru::orderBy('nama')->get();
+        $guru = Guru::orderBy('nama', 'asc')->get();
 
-        $gurus->transform(function($guru) {
-
-            $guru->foto_url = $guru->foto 
-                ? asset($guru->foto)
-                : null;
-
-            $guru->icon_url = $guru->icon 
-                ? asset($guru->icon)
-                : null;
-
-            return $guru;
-        });
-
-        return response()->json([
-            'success' => true, 
-            'data' => $gurus,
-        ]);
+        return view('guru', compact('guru'));
     }
 
     public function show($slug) 
@@ -37,17 +21,6 @@ class GuruController extends Controller
         $guru = Guru::where('slug', $slug)
             ->firstOrFail();
 
-        $guru->foto_url = $guru->foto 
-            ? asset($guru->foto)
-            : null;
-
-        $guru->icon_url = $guru->icon 
-            ? asset($guru->icon)
-            : null;
-
-        return response()->json([
-            'success' => true,
-            'data' => $guru,
-        ]);
+        return view('detail-guru', compact('guru'));
     }
 }
