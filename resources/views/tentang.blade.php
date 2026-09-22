@@ -26,7 +26,7 @@
             <div class="col-lg-5 text-center mt-4 mt-lg-0">
 
                 <img
-                    src="{{ asset('images/bimbel/2.png') }}"
+                    src="{{ asset('images/bimbel/study_together.png') }}"
                     alt="Tentang Pocinui"
                     class="img-fluid rounded shadow"
                 >

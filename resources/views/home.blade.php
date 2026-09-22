@@ -59,7 +59,7 @@
                 <div class="col-lg-6 text-center mt-5 mt-lg-0">
 
                     <img
-                        src="{{ asset('images/bimbel/1.png') }}"
+                        src="{{ asset('images/bimbel/sma.png') }}"
                         alt="Belajar bersama Pocinui"
                         class="img-fluid rounded shadow"
                     >
