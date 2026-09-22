@@ -5,10 +5,17 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Api\GuruController;
 use App\Http\Controllers\Api\KontakController;
+use App\Http\Controllers\Api\ProgramController;
 
-Route::get('/guru', [GuruController::class, 'index']);
+Route::get('/guru', [
+    GuruController::class, 
+    'index'
+]);
 
-Route::get('/guru/{slug}', [GuruController::class, 'show']);
+Route::get('/guru/{slug}', [
+    GuruController::class, 
+    'show'
+]);
 
 Route::post('/kontak', [
     KontakController::class, 
@@ -21,3 +28,13 @@ Route::get('/test', function () {
         'message' => 'Berhasil terhubung ke Laravel'
     ]);
 });
+
+Route::get( '/program', [
+        ProgramController::class, 
+        'index'
+]);
+
+Route::get( '/program/{slug}', [ 
+        ProgramController::class, 
+        'show'
+]);
