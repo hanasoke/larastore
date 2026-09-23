@@ -325,6 +325,102 @@ class ProgramSeeder extends Seeder
 
                 'aktif' => true,
             ],
+
+            [
+                'slug' => 'ips-smp',
+                'nama_program' => 'IPS SMP',
+                'mata_pelajaran' => 'IPS',
+                'jenjang' => 'SMP',
+
+                'deskripsi' =>
+                    'Program IPS SMP untuk membantu siswa memahami '
+                    . 'materi geografi, ekonomi, sejarah, dan sosiologi '
+                    . 'secara terstruktur dan mudah dipahami.',
+
+                'jadwal' => 'Senin & Rabu, 16.00 - 17.30',
+
+                'harga' => 200000,
+
+                'gambar' =>
+                    'images/program/ips-smp.jpg',
+
+                'icon' =>
+                    'images/icons/subjects/icon_pelajaran_ips.png',
+
+                'aktif' => true,
+            ],
+
+            [
+                'slug' => 'bahasa-jepang-sma',
+                'nama_program' => 'Bahasa Jepang SMA',
+                'mata_pelajaran' => 'Bahasa Jepang',
+                'jenjang' => 'SMA',
+
+                'deskripsi' =>
+                    'Program Bahasa Jepang untuk membantu siswa mempelajari '
+                    . 'kosakata, tata bahasa, percakapan dasar, Hiragana, '
+                    . 'Katakana, dan pengenalan Kanji.',
+
+                'jadwal' => 'Sabtu, 13.00 - 15.00',
+
+                'harga' => 220000,
+
+                'gambar' =>
+                    'images/program/bahasa-jepang.jpg',
+
+                'icon' =>
+                    'images/icons/subjects/icon_pelajaran_bahasa_jepang.png',
+
+                'aktif' => true,
+            ],
+
+            [
+                'slug' => 'bahasa-inggris-smp',
+                'nama_program' => 'Bahasa Inggris SMP',
+                'mata_pelajaran' => 'Bahasa Inggris',
+                'jenjang' => 'SMP',
+
+                'deskripsi' =>
+                    'Program Bahasa Inggris SMP untuk meningkatkan kemampuan '
+                    . 'grammar, vocabulary, reading, writing, listening, '
+                    . 'dan speaking siswa.',
+
+                'jadwal' => 'Selasa & Kamis, 16.00 - 17.30',
+
+                'harga' => 200000,
+
+                'gambar' =>
+                    'images/program/bahasa-inggris-smp.jpg',
+
+                'icon' =>
+                    'images/icons/subjects/icon_pelajaran_bahasa_inggris.png',
+
+                'aktif' => true,
+            ],
+
+            [
+                'slug' => 'kimia-smp',
+                'nama_program' => 'Kimia SMP',
+                'mata_pelajaran' => 'Kimia',
+                'jenjang' => 'SMP',
+
+                'deskripsi' =>
+                    'Program Kimia SMP untuk membantu siswa memahami '
+                    . 'konsep dasar materi, unsur, senyawa, campuran, '
+                    . 'perubahan zat, asam basa, dan konsep kimia dasar.',
+
+                'jadwal' => 'Rabu & Jumat, 16.00 - 17.30',
+
+                'harga' => 200000,
+
+                'gambar' =>
+                    'images/program/kimia-smp.jpg',
+
+                'icon' =>
+                    'images/icons/subjects/icon_pelajaran_kimia.png',
+
+                'aktif' => true,
+            ],
         ];
 
         foreach($programs as $program) {
