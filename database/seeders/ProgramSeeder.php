@@ -38,7 +38,6 @@ class ProgramSeeder extends Seeder
                 'aktif' => true,
             ],
 
-
             [
                 'slug' => 'matematika-smp',
                 'nama_program' => 'Matematika SMP',
@@ -62,7 +61,6 @@ class ProgramSeeder extends Seeder
 
                 'aktif' => true,
             ],
-
 
             [
                 'slug' => 'matematika-sma',
@@ -88,7 +86,6 @@ class ProgramSeeder extends Seeder
                 'aktif' => true,
             ],
 
-
             [
                 'slug' => 'bahasa-indonesia-sma',
                 'nama_program' => 'Bahasa Indonesia SMA',
@@ -112,7 +109,6 @@ class ProgramSeeder extends Seeder
 
                 'aktif' => true,
             ],
-
 
             [
                 'slug' => 'bahasa-inggris-sma',
@@ -138,7 +134,6 @@ class ProgramSeeder extends Seeder
                 'aktif' => true,
             ],
 
-
             [
                 'slug' => 'fisika-sma',
                 'nama_program' => 'Fisika SMA',
@@ -162,7 +157,6 @@ class ProgramSeeder extends Seeder
 
                 'aktif' => true,
             ],
-
 
             [
                 'slug' => 'kimia-sma',
@@ -188,7 +182,6 @@ class ProgramSeeder extends Seeder
                 'aktif' => true,
             ],
 
-
             [
                 'slug' => 'biologi-sma',
                 'nama_program' => 'Biologi SMA',
@@ -211,7 +204,127 @@ class ProgramSeeder extends Seeder
                     'images/icons/subjects/icon_pelajaran_biologi.png',
 
                 'aktif' => true,
-            ]
+            ],
+
+            [
+                'slug' => 'fisika-smp',
+                'nama_program' => 'Fisika SMP',
+                'mata_pelajaran' => 'Fisika',
+                'jenjang' => 'SMP',
+
+                'deskripsi' =>
+                    'Program Fisika SMP untuk membantu siswa memahami '
+                    . 'konsep dasar gerak, gaya, energi, tekanan, '
+                    . 'getaran, gelombang, dan listrik.',
+
+                'jadwal' => 'Senin & Rabu, 16.00 - 17.30',
+
+                'harga' => 200000,
+
+                'gambar' =>
+                    'images/program/fisika-smp.jpg',
+
+                'icon' =>
+                    'images/icons/subjects/icon_pelajaran_fisika.png',
+
+                'aktif' => true,
+            ],
+
+            [
+                'slug' => 'sosiologi-sma',
+                'nama_program' => 'Sosiologi SMA',
+                'mata_pelajaran' => 'Sosiologi',
+                'jenjang' => 'SMA',
+
+                'deskripsi' =>
+                    'Program Sosiologi SMA untuk membantu siswa memahami '
+                    . 'interaksi sosial, kelompok sosial, perubahan sosial, '
+                    . 'konflik, integrasi, dan kehidupan masyarakat.',
+
+                'jadwal' => 'Selasa & Kamis, 16.00 - 17.30',
+
+                'harga' => 200000,
+
+                'gambar' =>
+                    'images/program/sosiologi.jpg',
+
+                'icon' =>
+                    'images/icons/subjects/icon_pelajaran_sosiologi.png',
+
+                'aktif' => true,
+            ],
+
+            [
+                'slug' => 'ekonomi-sma',
+                'nama_program' => 'Ekonomi SMA',
+                'mata_pelajaran' => 'Ekonomi',
+                'jenjang' => 'SMA',
+
+                'deskripsi' =>
+                    'Program Ekonomi SMA untuk membantu siswa memahami '
+                    . 'konsep ekonomi, permintaan dan penawaran, pasar, '
+                    . 'perbankan, akuntansi, serta ekonomi makro dan mikro.',
+
+                'jadwal' => 'Senin & Kamis, 18.30 - 20.00',
+
+                'harga' => 220000,
+
+                'gambar' =>
+                    'images/program/ekonomi.jpg',
+
+                'icon' =>
+                    'images/icons/subjects/icon_pelajaran_ekonomi.png',
+
+                'aktif' => true,
+            ],
+
+            [
+                'slug' => 'biologi-smp',
+                'nama_program' => 'Biologi SMP',
+                'mata_pelajaran' => 'Biologi',
+                'jenjang' => 'SMP',
+
+                'deskripsi' =>
+                    'Program Biologi SMP untuk membantu siswa memahami '
+                    . 'makhluk hidup, sel, sistem organ manusia, '
+                    . 'ekosistem, klasifikasi, dan lingkungan.',
+
+                'jadwal' => 'Rabu & Jumat, 16.00 - 17.30',
+
+                'harga' => 200000,
+
+                'gambar' =>
+                    'images/program/biologi-smp.jpg',
+
+                'icon' =>
+                    'images/icons/subjects/icon_pelajaran_biologi.png',
+
+                'aktif' => true,
+            ],
+
+            [
+                'slug' => 'geografi-sma',
+                'nama_program' => 'Geografi SMA',
+                'mata_pelajaran' => 'Geografi',
+                'jenjang' => 'SMA',
+
+                'deskripsi' =>
+                    'Program Geografi SMA untuk membantu siswa memahami '
+                    . 'pemetaan, atmosfer, hidrosfer, litosfer, '
+                    . 'kependudukan, lingkungan, dan wilayah.',
+
+                'jadwal' => 'Selasa & Jumat, 18.30 - 20.00',
+
+                'harga' => 210000,
+
+                'gambar' =>
+                    'images/program/geografi.jpg',
+
+                'icon' =>
+                    'images/icons/subjects/icon_pelajaran_geografi.png',
+
+                'aktif' => true,
+            ],
         ];
 
         foreach($programs as $program) {
