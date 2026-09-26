@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KontakController;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\ProgramController;
+use App\Http\Controllers\PendaftaranController;
+
 
 Route::get('/', function () {
     return view('home');
@@ -34,3 +36,18 @@ Route::get(
     '/program/{slug}', 
     [ProgramController::class, 'show']
 )->name('program.detail');
+
+Route::get(
+    '/pendaftaran',
+    [PendaftaranController::class, 'create']
+)->name('pendaftaran');
+
+Route::post(
+    '/pendaftaran',
+    [PendaftaranController::class, 'store']
+)->name('pendaftaran.store');
+
+Route::get(
+    '/pendaftaran/sukses',
+    [PendaftaranController::class, 'sukses']
+)->name('pendaftaran.sukses');
