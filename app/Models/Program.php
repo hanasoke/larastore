@@ -23,4 +23,9 @@ class Program extends Model
         'harga' => 'integer',
         'aktif' => 'boolean',
     ];
+
+    public function pendaftarans()
+    {
+        return $this->hasMany(Pendaftaran::class);
+    }
 }
