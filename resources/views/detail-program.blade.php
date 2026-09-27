@@ -623,7 +623,10 @@
 
             {{-- Nanti bisa diarahkan ke halaman pendaftaran --}}
             <a
-                href="{{ route('kontak') }}"
+                href="{{ route(
+                    'pendaftaran', 
+                    ['program' => $program->slug]
+                ) }}"
                 class="btn btn-warning btn-lg me-2"
             >
                 Daftar Sekarang
