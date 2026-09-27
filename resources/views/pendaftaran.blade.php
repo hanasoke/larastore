@@ -29,32 +29,6 @@
 
             <div class="col-lg-8">
 
-                {{-- VALIDATION ERROR --}}
-                @if($errors->any())
-
-                    <div class="alert alert-danger">
-
-                        <strong>
-                            Pendaftaran belum dapat dikirim.
-                        </strong>
-
-                        <ul class="mb-0 mt-2">
-
-                            @foreach($errors->all() as $error)
-
-                                <li>
-                                    {{ $error }}
-                                </li>
-
-                            @endforeach
-
-                        </ul>
-
-                    </div>
-
-                @endif
-
-
                 <div class="card border-0 shadow">
 
                     <div class="card-body p-4 p-md-5">
@@ -90,7 +64,6 @@
                                            @error('program_id')
                                            is-invalid
                                            @enderror"
-                                    required
                                 >
 
                                     <option value="">
@@ -152,7 +125,6 @@
                                            @error('nama')
                                            is-invalid
                                            @enderror"
-                                    required
                                 >
 
                                 @error('nama')
@@ -185,7 +157,6 @@
                                            @error('email')
                                            is-invalid
                                            @enderror"
-                                    required
                                 >
 
                                 @error('email')
@@ -218,7 +189,6 @@
                                            @error('no_hp')
                                            is-invalid
                                            @enderror"
-                                    required
                                 >
 
                                 @error('no_hp')
@@ -249,7 +219,6 @@
                                            @error('jenis_kelamin')
                                            is-invalid
                                            @enderror"
-                                    required
                                 >
 
                                     <option value="">
@@ -308,7 +277,6 @@
                                            @error('sekolah')
                                            is-invalid
                                            @enderror"
-                                    required
                                 >
 
                                 @error('sekolah')
@@ -339,7 +307,6 @@
                                            @error('kelas')
                                            is-invalid
                                            @enderror"
-                                    required
                                 >
 
                                     <option value="">
