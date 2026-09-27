@@ -5,57 +5,39 @@
 @section('content')
 
 <section class="bg-primary text-white py-5">
-
     <div class="container text-center">
-
         <h1 class="fw-bold">
             Pendaftaran Siswa
         </h1>
-
         <p class="lead">
             Daftar program bimbingan belajar Pocinui.
         </p>
-
     </div>
-
 </section>
 
-
 <section class="py-5">
-
     <div class="container">
-
         <div class="row justify-content-center">
-
             <div class="col-lg-8">
-
                 <div class="card border-0 shadow">
-
                     <div class="card-body p-4 p-md-5">
-
                         <h3 class="fw-bold mb-4">
                             Form Pendaftaran
                         </h3>
-
 
                         <form
                             action="{{ route('pendaftaran.store') }}"
                             method="POST"
                         >
-
                             @csrf
-
-
                             {{-- PROGRAM --}}
                             <div class="mb-4">
-
                                 <label
                                     for="program_id"
                                     class="form-label fw-bold"
                                 >
                                     Program Belajar
                                 </label>
-
 
                                 <select
                                     name="program_id"
@@ -70,12 +52,9 @@
                                         -- Pilih Program --
                                     </option>
 
-
                                     @foreach($programs as $program)
-
                                         <option
                                             value="{{ $program->id }}"
-
                                             @selected(
                                                 old(
                                                     'program_id',
@@ -83,39 +62,30 @@
                                                 ) == $program->id
                                             )
                                         >
-
                                             {{ $program->nama_program }}
                                             -
                                             {{ $program->jenjang }}
 
                                         </option>
-
                                     @endforeach
-
                                 </select>
 
-
                                 @error('program_id')
-
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>
-
                                 @enderror
-
                             </div>
 
 
                             {{-- NAMA --}}
                             <div class="mb-3">
-
                                 <label
                                     for="nama"
                                     class="form-label fw-bold"
                                 >
                                     Nama Lengkap
                                 </label>
-
                                 <input
                                     type="text"
                                     name="nama"
@@ -126,21 +96,15 @@
                                            is-invalid
                                            @enderror"
                                 >
-
                                 @error('nama')
-
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>
-
                                 @enderror
-
                             </div>
-
 
                             {{-- EMAIL --}}
                             <div class="mb-3">
-
                                 <label
                                     for="email"
                                     class="form-label fw-bold"
@@ -160,19 +124,14 @@
                                 >
 
                                 @error('email')
-
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>
-
                                 @enderror
-
                             </div>
-
 
                             {{-- NOMOR HP --}}
                             <div class="mb-3">
-
                                 <label
                                     for="no_hp"
                                     class="form-label fw-bold"
@@ -198,13 +157,10 @@
                                     </div>
 
                                 @enderror
-
                             </div>
-
 
                             {{-- JENIS KELAMIN --}}
                             <div class="mb-3">
-
                                 <label
                                     for="jenis_kelamin"
                                     class="form-label fw-bold"
@@ -220,11 +176,9 @@
                                            is-invalid
                                            @enderror"
                                 >
-
                                     <option value="">
                                         -- Pilih --
                                     </option>
-
                                     <option
                                         value="Laki-laki"
                                         @selected(
@@ -234,7 +188,6 @@
                                     >
                                         Laki-laki
                                     </option>
-
                                     <option
                                         value="Perempuan"
                                         @selected(
@@ -244,23 +197,18 @@
                                     >
                                         Perempuan
                                     </option>
-
                                 </select>
 
                                 @error('jenis_kelamin')
-
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>
-
                                 @enderror
-
                             </div>
 
 
                             {{-- SEKOLAH --}}
                             <div class="mb-3">
-
                                 <label
                                     for="sekolah"
                                     class="form-label fw-bold"
@@ -280,19 +228,14 @@
                                 >
 
                                 @error('sekolah')
-
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>
-
                                 @enderror
-
                             </div>
-
 
                             {{-- KELAS --}}
                             <div class="mb-3">
-
                                 <label
                                     for="kelas"
                                     class="form-label fw-bold"
@@ -308,7 +251,6 @@
                                            is-invalid
                                            @enderror"
                                 >
-
                                     <option value="">
                                         -- Pilih Kelas --
                                     </option>
@@ -333,25 +275,18 @@
                                         >
                                             {{ $kelas }}
                                         </option>
-
                                     @endforeach
-
                                 </select>
 
                                 @error('kelas')
-
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>
-
                                 @enderror
-
                             </div>
-
 
                             {{-- ALAMAT --}}
                             <div class="mb-4">
-
                                 <label
                                     for="alamat"
                                     class="form-label fw-bold"
@@ -370,15 +305,11 @@
                                 >{{ old('alamat') }}</textarea>
 
                                 @error('alamat')
-
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>
-
                                 @enderror
-
                             </div>
-
 
                             <button
                                 type="submit"
@@ -386,19 +317,12 @@
                             >
                                 Kirim Pendaftaran
                             </button>
-
                         </form>
-
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </div>
-
 </section>
 
 @endsection
