@@ -27,11 +27,11 @@ class GuruController extends Controller
                 'pengalaman' => $guru->pengalaman,
 
                 'foto_url' => $guru->foto
-                    ? asset('images/foto_guru/' . $guru->foto)
+                    ? asset($guru->foto)
                     : null,
 
                 'icon_url' => $guru->icon
-                    ? asset('images/icons/subjects/' . $guru->icon)
+                    ? asset($guru->icon)
                     : null,
 
                 'deskripsi' => $guru->deskripsi,
