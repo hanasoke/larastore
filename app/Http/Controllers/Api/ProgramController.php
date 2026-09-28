@@ -15,26 +15,31 @@ class ProgramController extends Controller
             ->orderBy('jenjang')
             ->get();
 
-        $programs->transform(function ($program) {
+        $data = $programs -> map(function ($program) {
+            return [
+                'id' => $program->id,
+                'slug' => $program->slug,
+                'nama_pelajaran' => $program->nama_program,
+                'mata_pelajaran' => $program->mata_pelajaran,
+                'jenjang' => $program->jenjang,
+                'deskripsi' => $program->deskripsi,
+                'jadwal' => $program->jadwal,
+                'harga' => $program->harga, 
 
-                $program->gambar_url = 
-                    $program->gambar 
-                        ? asset($program->gambar)
-                        : null;
+                'gambar_url' => $program->gambar ? asset($program->gambar) : null,
+                
+                'icon_url' => $program->icon ? asset($program->icon) : null,
 
-                $program->icon_url = 
-                    $program->icon 
-                        ? asset($program->icon)
-                        : null;
+                'aktif' => $program->aktif,
+            ];
+            
+        });
 
-                return $program;
-            });
-
-            return response()->json([
-                'success' => true,
-                'data' => $programs,
-            ]);
-    }
+        return response()->json([
+            'success' => true,
+            'data' => $data,
+        ]);
+}
 
     public function show($slug) 
     {
