@@ -11,9 +11,12 @@ class GuruController extends Controller
 {
     public function index()
     {
-        $guru = Guru::orderBy('nama', 'asc')->get();
+        $gurus = Guru::orderBy('nama', 'asc')->get();
 
-        return view('guru', compact('guru'));
+        return response()->json([
+            'success' => true,
+            'data' => $gurus
+        ]);
     }
 
     public function show($slug) 
