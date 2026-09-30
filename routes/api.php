@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\GuruController;
 use App\Http\Controllers\Api\KontakController;
 use App\Http\Controllers\Api\ProgramController;
+use App\Http\Controllers\Api\PendaftaranController;
 
 Route::get('/guru', [
     GuruController::class, 
@@ -38,3 +39,8 @@ Route::get( '/program/{slug}', [
         ProgramController::class, 
         'show'
 ]);
+
+Route::post(
+    '/pendaftaran',
+    [PendaftaranController::class, 'store']
+);
